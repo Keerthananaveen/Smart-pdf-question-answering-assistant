@@ -8,13 +8,13 @@ The application reads a PDF document, creates vector embeddings, stores them in 
 
 ## Features
 
-- Load PDF documents
+- Upload PDF documents through the UI
 - Split text into chunks
 - Generate embeddings using HuggingFace
 - Store embeddings in FAISS
 - Retrieve relevant context
 - Answer questions using Google Gemini
-- Command-line interface
+- Command-line and Streamlit interface
 
 ---
 
@@ -36,22 +36,23 @@ The application reads a PDF document, creates vector embeddings, stores them in 
 smart-pdf-assistant/
 │
 ├── app.py
+├── streamlit_app.py
 ├── requirements.txt
 ├── .env
 │
 ├── data/
-│   └── book.pdf
+│   └── sample.pdf  # optional demo PDF; you can delete this file if you don't need it
 │
-├── faiss_index/
+├── faiss_index/   # optional local FAISS index storage
 │
 └── modules/
     ├── llm.py
     ├── embeddings.py
-    ├── loader.py
+    ├── pdf_loader.py
+    ├── text_splitter.py
     ├── vector_store.py
     ├── rag_pipeline.py
     ├── prompts.py
-    └── helper.py
 ```
 
 ---
@@ -96,17 +97,15 @@ GOOGLE_API_KEY=your_google_api_key
 
 ---
 
-## Build the Vector Database
+## Run the Application
 
-Run the indexing script.
+Use the Streamlit interface to upload any PDF and start asking questions.
 
 ```bash
-python create_vector_db.py
+python -m streamlit run streamlit_app.py
 ```
 
----
-
-## Run the Application
+You can also run the basic command-line interface:
 
 ```bash
 python app.py
@@ -148,11 +147,26 @@ Answer
 
 ---
 
+## Screenshots
+
+These are example screenshot placeholders. Replace the paths with your actual files after capturing the UI and results.
+
+### App UI
+
+![App UI](screenshots/app-ui.png)
+
+### Uploaded PDF
+
+![Uploaded PDF](screenshots/uploaded-pdf.png)
+
+### Answer Output
+
+![Answer Output](screenshots/answer-output.png)
+
+---
+
 ## Future Improvements
 
-- Upload any PDF from the UI
-- Streamlit interface
-- Chat history
 - Multiple PDF support
 - Source citations
 - Conversation memory
