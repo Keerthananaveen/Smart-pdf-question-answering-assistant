@@ -153,15 +153,15 @@ These are example screenshot placeholders. Replace the paths with your actual fi
 
 ### App UI
 
-![App UI](screenshots/app-ui.png)
+![App UI](docs/screenshots/app-ui.png)
 
 ### Uploaded PDF
 
-![Uploaded PDF](screenshots/uploaded-pdf.png)
+![Uploaded PDF](docs/screenshots/uploaded-pdf.png)
 
 ### Answer Output
 
-![Answer Output](screenshots/answer-output.png)
+![Answer Output](docs/screenshots/answer-output.png)
 
 ---
 
